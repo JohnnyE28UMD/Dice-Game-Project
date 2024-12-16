@@ -1,6 +1,6 @@
 # Tuple Out Dice Game
 # What my program does
-My Program simulates a game in which you roll a virutal dice that then calculates and keep track off the amount of points you have depending on the the numbers you roll with the three dice. This game can only be played with 2 players and a player must reach a certain number of points in order to win the game. This game and Be ran through both VSCode and your terminal on your computer. This code also saves the data from the rolled dice each time a game is played.
+My Program simulates a game in which you roll a virutal dice that then calculates and keep track off the amount of points you have depending on the the numbers you roll with the three dice. This game can only be played with 2 players and a player must reach a certain number of points in order to win the game. This game and Be ran through both VSCode and your terminal on your computer. My code also has a feature were the time is recorded during each turn and will tell you the time your turn took when its over and when the whole game is over, it will tell you how long the game took in total.
 
 # How To Play
 
