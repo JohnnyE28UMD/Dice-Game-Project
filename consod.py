@@ -2,6 +2,9 @@ import random
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+#Keep the results for the the rolled dice
+dice_rolls= []
+
 #Rolls the dice
 def Dice_Roll():
     """Rolls Single Sided Dice"""
