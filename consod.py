@@ -1,9 +1,5 @@
 import random
-import seaborn as sns
-import matplotlib.pyplot as plt
-
-#Keep the results for the the rolled dice
-dice_rolls= []
+import time
 
 #Rolls the dice
 def Dice_Roll():
@@ -12,6 +8,9 @@ def Dice_Roll():
 
 def player_turn():
     """Plays Single Turn Of Game"""
+    #Start the timer for game
+    start_time = time.time()
+
     dice = [Dice_Roll(), Dice_Roll(), Dice_Roll()]
     print(f"Intial roll: {dice}")
 
@@ -54,22 +53,24 @@ def player_turn():
     #calculate points
     score = sum(dice)
     print(f"Player stops with dice {dice} for a total score of {score} points.")
+    end_time = time.time()
+    elasped_time = end_time - start_time
+    print(f"Time taken for this turn: {elasped_time:.2f} seconds.")
     return score
 
 #Run A Game
 Score_Value = 0
+#The game clock starts running
+start_gametimer = time.time()
+
 while input("Play The Turn (y/n):").lower() == 'y':
     Score_Value += player_turn()
     print(f"Total score: {Score_Value}")
+
+#The game clock ends
+end_gametimer = time.time()
+total_gametime = end_gametimer - start_gametimer
 print("OVER!!!!!")
+print(f"Total game duration: {total_gametime:.2f} seconds.")
 
 
-# Data visualization
-if dice_rolls:
-    plt.figure(figsize=(10, 6))
-    sns.histplot(dice_rolls, bins=6, kde=False, color='green', edgeofcolor='black')
-    plt.title("Dice Roll Distribution", fontsize=16)
-    plt.xlabel("Dice Face", fontsize=14)
-    plt.ylabel("Frequncy", fontsize=14)
-    plt.xticks(range(1, 7))
-    plt.show()
