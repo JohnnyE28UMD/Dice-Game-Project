@@ -1,5 +1,6 @@
 import random
-
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 #Rolls the dice
 def Dice_Roll():
@@ -60,4 +61,12 @@ while input("Play The Turn (y/n):").lower() == 'y':
 print("OVER!!!!!")
 
 
-
+# Data visualization
+if dice_rolls:
+    plt.figure(figsize=(10, 6))
+    sns.histplot(dice_rolls, bins=6, kde=False, color='green', edgeofcolor='black')
+    plt.title("Dice Roll Distribution", fontsize=16)
+    plt.xlabel("Dice Face", fontsize=14)
+    plt.ylabel("Frequncy", fontsize=14)
+    plt.xticks(range(1, 7))
+    plt.show()
